@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     alignItems:'center',
       justifyContent:'center'
-  }, 
-  bottomStuff:{
+  },
+  bottomStuff:{ 
     flex:1,
     flexDirection:'column',
     alignItems:'center',
