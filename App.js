@@ -1,5 +1,37 @@
 import React, { Component } from 'react';
-import { AppRegistry, View, Image,Text, StyleSheet,  } from 'react-native';
+import { Button, Alert, AppRegistry, View, Image,Text, StyleSheet,TouchableHighlight  } from 'react-native';
+
+export default class DisplayAnImage extends Component {
+  _onPressButton() {
+    console.log('test');
+  }
+
+  render() {
+    return (
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }} >
+        <View style={styles.car}>
+        <TouchableHighlight onPress={this._onPressButton }>
+          <Image
+            source={require('./src/img/car.png')}
+            style={styles.carImg}
+          />
+          </TouchableHighlight>
+          <View style={styles.distance} />
+        </View>
+        <View style={styles.bottomStuff}>
+        <Text style={styles.bigText}>--</Text>
+            <Text style={styles.smallText}>Centimeters</Text>
+            </View>
+      </View>
+    );
+  }
+};
+//styles:
 const styles = StyleSheet.create({
   body:{
 
@@ -47,30 +79,6 @@ const styles = StyleSheet.create({
 
   }
 });
-export default class DisplayAnImage extends Component {
-  render() {
-    return (
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-        <View style={styles.car} >
-        <Image
-          source={require('./src/img/car.png')}
-          style={styles.carImg}
-        />
-        <View style={styles.distance} />
-        </View>
-        <View style={styles.bottomStuff}>
-        <Text style={styles.bigText}>--</Text>
-            <Text style={styles.smallText}>Centimeters</Text>
-            </View>
-      </View>
-    );
-  }
-}
 
 // skip this line if using Create React Native App
-AppRegistry.registerComponent('DisplayAnImage', () => DisplayAnImage);
+AppRegistry.registerComponent('AwesomeProject', () => DisplayAnImage);
