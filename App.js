@@ -8,63 +8,63 @@ const styles = StyleSheet.create({
     width: 150,
     height: 300,
   },
+  carImg: {
+    width: 150,
+    height: 300,
+  },
   mainContainer: {
-    flex:1,
+    flex:3,
     flexDirection:'column',
     alignItems:'center',
       justifyContent:'center'
   },
-  bottomStuff:{ 
-    flex:1,
+  bottomStuff:{
     flexDirection:'column',
     alignItems:'center',
-      justifyContent:'center',
-      width:100,
-      height:100
   },
   bigText:{
-    fontSize:72
+    fontSize:72,
+    paddingTop:20,
+    borderTopWidth: 4,
+    borderTopColor: '#000',
+    marginTop:100,
+    width:300,
+    textAlign:'center',
   },
   smallText:{
-    fontSize: 22
+    fontSize: 32
   },
   half:{
     flex:1
+  },
+  distance:{
+    width: 150,
+    height:123,
+    backgroundColor:'red',
+    flexDirection:'row',
+    marginTop:-23,
+    left:0
+
   }
 });
 export default class DisplayAnImage extends Component {
   render() {
     return (
-      // <View style={styles.body}>
-      //   <View style={styles.half}>
-      //       <View style={styles.carContainer}>
-      //         <Image
-      //           source={require('./src/img/car.png')}
-      //           style={styles.car}
-      //         />
-      //         </View>
-      //   </View>
-      //   <View style={styles.half}>
-      //     <View style={styles.carContainer}>
-      //     <Text style={styles.bigText}>00</Text>
-      //     <Text style={styles.smallText}>Centimeters</Text>
-      //     </View>
-      //   </View>
-      // </View>
       <View style={{
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-        <View style={{width: 150, height: 300}} >
+        <View style={styles.car} >
         <Image
           source={require('./src/img/car.png')}
-          style={styles.car}
+          style={styles.carImg}
         />
+        <View style={styles.distance} />
         </View>
-        <View>
-        <Text style={styles.bigText}>00</Text>
+        <View style={styles.bottomStuff}>
+        <Text style={styles.bigText}>--</Text>
             <Text style={styles.smallText}>Centimeters</Text>
             </View>
       </View>
