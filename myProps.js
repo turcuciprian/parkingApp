@@ -2,9 +2,23 @@ import React, { Component } from 'react';
 import { Button, Alert, AppRegistry, View, Image,Text, StyleSheet,TouchableHighlight  } from 'react-native';
 import {cipStyles} from './styles';
 class Car extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {distance: 100};
+
+    setInterval(() => {
+      this.setState(previousState => {
+        if(this.state.distance>0){
+          return { distance: previousState.distance-1 };
+        }
+        return { distance: previousState.distance };
+      });
+    }, 100);
+  }
+
   render(){
     return (
-      <TouchableHighlight style={cipStyles.car}>
+      <TouchableHighlight style={cipStyles.car, { marginBottom: this.state.distance }}>
         <Image
           source={require('./src/img/car.png')}
           style={cipStyles.carImg} />

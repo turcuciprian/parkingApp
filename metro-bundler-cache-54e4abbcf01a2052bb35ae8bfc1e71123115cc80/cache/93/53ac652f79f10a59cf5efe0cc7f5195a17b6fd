@@ -52,10 +52,22 @@ function _wrapComponent(id) {
 var Car = _wrapComponent('Car')(function (_Component) {
   _inherits(Car, _Component);
 
-  function Car() {
+  function Car(props) {
     _classCallCheck(this, Car);
 
-    return _possibleConstructorReturn(this, (Car.__proto__ || Object.getPrototypeOf(Car)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Car.__proto__ || Object.getPrototypeOf(Car)).call(this, props));
+
+    _this.state = { distance: 100 };
+
+    setInterval(function () {
+      _this.setState(function (previousState) {
+        if (_this.state.distance > 0) {
+          return { distance: previousState.distance - 1 };
+        }
+        return { distance: previousState.distance };
+      });
+    }, 100);
+    return _this;
   }
 
   _createClass(Car, [{
@@ -63,16 +75,16 @@ var Car = _wrapComponent('Car')(function (_Component) {
     value: function render() {
       return _react3.default.createElement(
         _reactNative.TouchableHighlight,
-        { style: _styles.cipStyles.car, __source: {
+        { style: (_styles.cipStyles.car, { marginBottom: this.state.distance }), __source: {
             fileName: _jsxFileName,
-            lineNumber: 7
+            lineNumber: 21
           }
         },
         _react3.default.createElement(_reactNative.Image, {
           source: require('./src/img/car.png'),
           style: _styles.cipStyles.carImg, __source: {
             fileName: _jsxFileName,
-            lineNumber: 8
+            lineNumber: 22
           }
         })
       );
@@ -98,14 +110,14 @@ var BottomLayer = _wrapComponent('BottomLayer')(function (_Component2) {
         _reactNative.View,
         { style: _styles.cipStyles.bottomStuff, __source: {
             fileName: _jsxFileName,
-            lineNumber: 18
+            lineNumber: 32
           }
         },
         _react3.default.createElement(
           _reactNative.Text,
           { style: _styles.cipStyles.bigText, __source: {
               fileName: _jsxFileName,
-              lineNumber: 19
+              lineNumber: 33
             }
           },
           this.props.distance
@@ -114,7 +126,7 @@ var BottomLayer = _wrapComponent('BottomLayer')(function (_Component2) {
           _reactNative.Text,
           { style: _styles.cipStyles.smallText, __source: {
               fileName: _jsxFileName,
-              lineNumber: 20
+              lineNumber: 34
             }
           },
           'Centimeters'

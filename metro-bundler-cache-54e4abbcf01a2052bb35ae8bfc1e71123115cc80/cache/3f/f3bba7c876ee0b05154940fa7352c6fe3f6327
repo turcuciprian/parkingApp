@@ -12,11 +12,16 @@ var cipStyles = _reactNative.StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center'
   },
-  car: {},
-  carImg: {
-    width: 220,
-    height: 300,
+  car: {
+    width: 250,
+    height: 323,
     marginBottom: 100
+
+  },
+  carImg: {
+    width: 250,
+    height: 350,
+    marginBottom: -27
   },
   bottomStuff: {
     flexDirection: 'column',

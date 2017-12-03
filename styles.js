@@ -8,11 +8,15 @@ const cipStyles = StyleSheet.create({
     alignItems: 'center',
   },
   car: {
+    width: 250,
+    height: 323,
+    marginBottom:100,
+
   },
   carImg: {
-    width: 220,
-    height: 300,
-    marginBottom:100
+    width: 250,
+    height: 350,
+    marginBottom:-27,
   },
   bottomStuff:{
     flexDirection:'column',
