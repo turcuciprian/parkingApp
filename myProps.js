@@ -4,7 +4,7 @@ import {cipStyles} from './styles';
 class Car extends Component {
   render(){
     return (
-      <TouchableHighlight>
+      <TouchableHighlight style={cipStyles.car}>
         <Image
           source={require('./src/img/car.png')}
           style={cipStyles.carImg} />

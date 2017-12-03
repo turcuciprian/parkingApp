@@ -15,7 +15,7 @@ export default class DisplayAnImage extends Component {
 
   render() {
     return (
-      <View style={ cipStyles.body} >
+      <View style={cipStyles.body} >
         <Car />
         <BottomLayer distance="--" />
       </View>
